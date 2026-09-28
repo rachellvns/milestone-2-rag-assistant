@@ -1,11 +1,11 @@
 # store.py
-from qdrant_client import models
-from config import EMBEDDING_MODEL
-from rag import client  # ← reuse the single client instance, don't create a new one
+from qdrant_client import QdrantClient, models
+from config import EMBEDDING_MODEL, QDRANT_PATH
+
+client = QdrantClient(path=QDRANT_PATH)
 
 HYBRID_COLLECTION_NAME = "corpus_hybrid"
 BM25_MODEL = "Qdrant/bm25"
-
 
 def ensure_hybrid(name: str = HYBRID_COLLECTION_NAME) -> None:
     if client.collection_exists(name):
@@ -36,15 +36,16 @@ def retrieve_hybrid(q: str, doc_type: str | None = None, limit: int = 5):
             models.Prefetch(
                 query=models.Document(text=q, model=EMBEDDING_MODEL),
                 using="dense",
+                filter=query_filter,
                 limit=20,
             ),
             models.Prefetch(
                 query=models.Document(text=q, model=BM25_MODEL),
                 using="bm25",
+                filter=query_filter,
                 limit=20,
             ),
         ],
         query=models.FusionQuery(fusion=models.Fusion.RRF),
-        query_filter=query_filter,
         limit=limit,
     ).points
