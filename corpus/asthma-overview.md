@@ -7,11 +7,11 @@ title: Asthma in Adults: Diagnosis and Disease Overview
 
 ## Definition
 
-Asthma is a chronic inflammatory disease of the airways characterized by variable and recurring symptoms of wheeze, shortness of breath, chest tightness, and cough, accompanied by variable airflow limitation that often reverses either spontaneously or with treatment. While frequently thought of as a childhood condition, a substantial proportion of asthma either persists into adulthood or first develops in adult life, sometimes referred to as adult-onset asthma, which tends to follow a somewhat different clinical course than childhood-onset disease.
+
 
 ## Pathophysiology
 
-The airway inflammation in asthma involves a complex interplay of immune cells, including eosinophils, mast cells, and T-helper lymphocytes, which release inflammatory mediators that cause bronchial smooth muscle contraction, mucus hypersecretion, and airway wall thickening over time. Repeated inflammatory episodes can lead to airway remodeling, a process involving structural changes such as subepithelial fibrosis and smooth muscle hypertrophy, which may contribute to a degree of fixed airflow obstruction in some patients with long-standing, poorly controlled disease.
+
 
 ## Phenotypes
 
