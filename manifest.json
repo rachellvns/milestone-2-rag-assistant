@@ -1,6 +1,6 @@
 {
   "corpus\\adult-vaccination-patient-education.md": {
-    "hash": "b21b62fc7713fe1415d88051ab34afabd7825d80494900ba5794a036ffa5f66e",
+    "hash": "2b29206edd9432bcecec2e28459b25cc9d9ccfd840211c714acfae69ea26984e",
     "ids": [
       49203421286396,
       215159704085762,
@@ -9,7 +9,7 @@
     ]
   },
   "corpus\\antibiotic-resistance-summary.md": {
-    "hash": "cb9f921580b396a7c793bc8e1555904c257cea3885c9aad23d1354797415c8b0",
+    "hash": "835d6d57fa40f9301ea3f7346c2f4f0805bf6dddd3486a497c78331a2ca54130",
     "ids": [
       68678150761670,
       13606486193617,
@@ -20,7 +20,7 @@
     ]
   },
   "corpus\\asthma-overview.md": {
-    "hash": "f6dff35e5baf3f047c90a8dec7102021312cd2507f28b0e599677c883a12ee59",
+    "hash": "fa5f422105f68d56c77e0374ded5470d0e484e3b5f9e4e65b6690db4776ebb87",
     "ids": [
       160802895115638,
       29389930712071,
@@ -29,7 +29,7 @@
     ]
   },
   "corpus\\cardiovascular-nutrition.md": {
-    "hash": "b9e4fb885a1c515828a94d3eedb7b3aace28e98e81a1349299f4196795e5c701",
+    "hash": "a8ab4b2c623a0668b7020126e6be4f7d39237ffac2c8f40bb4b283767b24cea9",
     "ids": [
       128102392848810,
       188084283159683,
@@ -38,7 +38,7 @@
     ]
   },
   "corpus\\ckd-overview.md": {
-    "hash": "11a38363e867e85d2fbd5a8b646ab72c98974fbd946fa46950fa7da361b5eb66",
+    "hash": "711bf3e396ce2a15a8ab1045e654c06d33c11414346b687b98e1187ad85fbb5a",
     "ids": [
       7062300288095,
       133456747602097,
@@ -50,7 +50,7 @@
     ]
   },
   "corpus\\depression-anxiety-screening-guideline.md": {
-    "hash": "875383b259c1de9fa08437200878dc37173c2c754c907c92943130ef4faff7a7",
+    "hash": "e814d02d3796acd76b25728607f614073aca5112148c890f47471ee908fafc7e",
     "ids": [
       206510668636344,
       196761055352791,
@@ -61,7 +61,7 @@
     ]
   },
   "corpus\\hypertension-guideline.md": {
-    "hash": "dfcdc9c2d02ca3075cea6b1884b1fad0fcd185550334adf03ae8067e12845564",
+    "hash": "86f098669368fae561087045e55c5f02293243184f564adaf0647ccc59c06f3e",
     "ids": [
       270082709023656,
       93572605060159,
@@ -71,7 +71,7 @@
     ]
   },
   "corpus\\knee-replacement-patient-education.md": {
-    "hash": "cff41faf3204901361a0970302e1eb6423b0a8023122cc4573ddf7ed07c6894c",
+    "hash": "61f5f83a9a7f52ab24fa94d8f648f5a9cecb11a8c0eb53c18f44ee72e3228f6a",
     "ids": [
       120533402650195,
       101121325994903,
@@ -80,7 +80,7 @@
     ]
   },
   "corpus\\migraine-guideline.md": {
-    "hash": "f81b68310662c21710ca885d67499e229e2fbb9c73aebdc71c4641a165a9d70d",
+    "hash": "a2743b7b279adc05324674da1b6fafcbb07f5ba1336fa2ce6391bf5b1be0d448",
     "ids": [
       45872056588053,
       145179109643338,
@@ -91,7 +91,7 @@
     ]
   },
   "corpus\\type2-diabetes-overview.md": {
-    "hash": "c52a574229d9288c0ef78ce5b6f47bf4af2f7da06eb1534733db3f637ee559f5",
+    "hash": "dffc22acdbf2c2017d6faca5b56cdbaa8fae188488aa9e9cbc3cbf684f369bed",
     "ids": [
       254636380590094,
       280568451033651,

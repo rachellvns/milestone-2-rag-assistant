@@ -22,3 +22,9 @@ DOC_TYPE_BY_FILE = {
     "adult-vaccination-patient-education.md": "patient_education",
     "antibiotic-resistance-summary.md": "clinical_summary",
 }
+
+ALLOWED_BY_FILE = {
+    "hypertension-guideline.md": ["doctor"],
+    "depression-anxiety-screening-guideline.md": ["doctor"],
+    "antibiotic-resistance-summary": ["doctor"]
+}

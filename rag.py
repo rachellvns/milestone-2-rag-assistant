@@ -54,11 +54,10 @@ def call_llm(system: str, user: str, temperature: float = 0.0, max_tokens: int =
             return block.text
     raise RuntimeError(f"No text block in response. Content types: {[b.type for b in response.content]}")
 
-def answer(q: str, doc_type: str | None = None, retriever=None) -> tuple[str, list]:
+def answer(q: str, user_id: str, doc_type: str | None = None, retriever=None) -> tuple[str, list]:
     retriever = retriever or retrieve_hybrid
-    
     with timed("retrieve"):
-        hits = retriever(q, doc_type=doc_type)
+        hits = retriever(q, user_id=user_id, doc_type=doc_type)
 
     context = "\n\n".join(
         f"[{i+1}] ({h.payload['source']} #{h.payload['chunk']})"

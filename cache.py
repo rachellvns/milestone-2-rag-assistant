@@ -40,6 +40,6 @@ def cached_answer(q: str, user: str):
     k = cache_key(q, user, corpus_version())
     if hit := get(k):
         return hit["ans"], deserialise(hit["hits"])
-    ans, hits = answer(q)
+    ans, hits = answer(q, user_id=user)
     put(k, {"ans": ans, "hits": serialise(hits)})
     return ans, hits

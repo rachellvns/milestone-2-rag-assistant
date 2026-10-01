@@ -24,27 +24,21 @@ def ensure_hybrid(name: str = HYBRID_COLLECTION_NAME) -> None:
     )
 
 
-def retrieve_hybrid(q: str, doc_type: str | None = None, limit: int = 5):
-    query_filter = None
+def retrieve_hybrid(q: str, user_id: str, doc_type: str | None = None, limit: int = 5):
+    if not user_id:
+        raise ValueError("user_id is required")   # never fall back to "no filter"
+
+    must = [models.FieldCondition(key="allowed", match=models.MatchAny(any=[user_id, "public"]))]
     if doc_type:
-        query_filter = models.Filter(
-            must=[models.FieldCondition(key="doc_type", match=models.MatchValue(value=doc_type))]
-        )
+        must.append(models.FieldCondition(key="doc_type", match=models.MatchValue(value=doc_type)))
+    query_filter = models.Filter(must=must)
     return client.query_points(
         HYBRID_COLLECTION_NAME,
         prefetch=[
-            models.Prefetch(
-                query=models.Document(text=q, model=EMBEDDING_MODEL),
-                using="dense",
-                filter=query_filter,
-                limit=20,
-            ),
-            models.Prefetch(
-                query=models.Document(text=q, model=BM25_MODEL),
-                using="bm25",
-                filter=query_filter,
-                limit=20,
-            ),
+            models.Prefetch(query=models.Document(text=q, model=EMBEDDING_MODEL),
+                            using="dense", filter=query_filter, limit=20),
+            models.Prefetch(query=models.Document(text=q, model=BM25_MODEL),
+                            using="bm25", filter=query_filter, limit=20),
         ],
         query=models.FusionQuery(fusion=models.Fusion.RRF),
         limit=limit,

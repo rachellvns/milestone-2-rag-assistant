@@ -3,7 +3,7 @@ import hashlib, json
 from pathlib import Path
 from qdrant_client import models
 from chunker import chunk
-from config import EMBEDDING_MODEL, DOC_TYPE_BY_FILE
+from config import ALLOWED_BY_FILE, EMBEDDING_MODEL, DOC_TYPE_BY_FILE
 from store import client, ensure_hybrid, HYBRID_COLLECTION_NAME, BM25_MODEL
 from corpus_version import bump_corpus_version
 
@@ -38,6 +38,7 @@ def upsert_file(p: Path) -> list[int]:
                 "chunk": i,
                 "text": ch,
                 "doc_type": DOC_TYPE_BY_FILE.get(p.name, "unknown"),
+                "allowed": ALLOWED_BY_FILE.get(p.name, ["public"]),
             },
         ))
     if points:
@@ -51,7 +52,8 @@ manifest = load_json(MANIFEST)   # {path: {hash, ids}}
 changed = 0
 
 for p in sorted(Path("corpus").glob("*.*")):
-    h = hashlib.sha256(p.read_bytes()).hexdigest()
+    allowed = ALLOWED_BY_FILE.get(p.name, ["public"])
+    h = hashlib.sha256(p.read_bytes() + json.dumps(allowed).encode()).hexdigest()
     entry = manifest.get(str(p))
     if entry and entry["hash"] == h:
         continue
